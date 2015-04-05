@@ -30,6 +30,12 @@
   with_items:
     - ruby
 
+- name: set PATH to use ruby
+  lineinfile:
+    dest: '{{ zshrc }}'
+    line: export PATH=/opt/ruby-2.1.5/bin:$HOME/.gem/ruby/2.1.0/bin:$PATH
+    state: present
+
 - name: copy configs
   copy: src={{ item }} dest={{ user_home }}
   with_items:
