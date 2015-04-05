@@ -5,8 +5,8 @@
 
 - name: install OpenJDK
   yum: name=java-1.7.0-openjdk state=present
-  when: jdk_install|failed
+  when: oracle_jdk|failed
 
 - name: remove OpenJDK if Oracle JDK installed
   yum: name=java-1.7.0-openjdk state=absent
-  when: jdk_install|success
+  when: oracle_jdk|success
