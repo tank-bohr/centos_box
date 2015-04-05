@@ -4,6 +4,7 @@
     - gcc
     - gcc-c++
     - patch
+    - zip
     - unzip
     - redis
     - sphinx
