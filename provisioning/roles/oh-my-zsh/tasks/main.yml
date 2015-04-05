@@ -12,7 +12,7 @@
 
 - name: .zshrc
   sudo: False
-  template: src=zshrc.j2 dest={{ zshrc }} owner={{ user }}
+  template: src=.zshrc.j2 dest={{ zshrc }} owner={{ user }}
 
 - name: find zsh
   sudo: False
