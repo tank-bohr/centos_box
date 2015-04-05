@@ -11,6 +11,8 @@
     - mariadb-devel
     - libcurl-devel
     - libyaml-devel
+    - libxml2-devel
+    - libxslt-devel
     - ImageMagick-devel
 
 - name: start services
