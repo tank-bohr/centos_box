@@ -1,6 +1,9 @@
 - name: install deps
   yum: pkg={{ item }} state=latest
   with_items:
+    - gcc
+    - gcc-c++
+    - patch
     - unzip
     - redis
     - sphinx
@@ -8,8 +11,6 @@
     - mariadb-devel
     - libcurl-devel
     - libyaml-devel
-    - libxml2-devel
-    - libxslt-devel
     - ImageMagick-devel
     - java-1.7.0-openjdk
 
