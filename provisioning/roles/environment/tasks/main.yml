@@ -12,7 +12,6 @@
     - libcurl-devel
     - libyaml-devel
     - ImageMagick-devel
-    - java-1.7.0-openjdk
 
 - name: start services
   service: name={{ item }} state=started enabled=yes
