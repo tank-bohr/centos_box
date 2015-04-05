@@ -1,0 +1,36 @@
+- name: install deps
+  yum: pkg={{ item }} state=latest
+  with_items:
+    - unzip
+    - redis
+    - sphinx
+    - mariadb-server
+    - mariadb-devel
+    - libcurl-devel
+    - libyaml-devel
+    - libxml2-devel
+    - libxslt-devel
+    - ImageMagick-devel
+    - java-1.7.0-openjdk
+
+- name: start services
+  service: name={{ item }} state=started enabled=yes
+  with_items:
+    - mariadb.service
+    - redis.service
+
+- name: add rpm repo for ruby
+  get_url:
+    url: http://download.opensuse.org/repositories/home:tank_bohr/CentOS_7/home:tank_bohr.repo
+    dest: /etc/yum.repos.d
+
+- name: install ruby
+  yum: pkg={{ item }} state=latest
+  with_items:
+    - ruby
+
+- name: copy configs
+  copy: src={{ item }} dest={{ user_home }}
+  with_items:
+    - .gemrc
+    - .gitconfig

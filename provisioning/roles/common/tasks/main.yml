@@ -1,0 +1,16 @@
+---
+- name: Usefull stuff
+  yum: pkg={{ item }} state=latest
+  with_items:
+    - mc
+    - vim
+    - curl
+    - wget
+    - epel-release
+
+# - name: Disable all firewalls
+#   service: name={{ item }} state=stopped enabled=no
+#   ignore_errors: yes
+#   with_items:
+#     - iptables
+#     - firewalld

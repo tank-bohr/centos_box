@@ -1,0 +1,14 @@
+user: '{{ ansible_env.SUDO_USER }}'
+
+oh_my_zsh:
+  theme: gentoo
+  plugins:
+    - yum
+    - git
+    - ruby
+    - rails
+    - bundler
+    - command-not-found
+
+user_home: /home/{{ user }}
+zshrc: "{{ user_home }}/.zshrc"
